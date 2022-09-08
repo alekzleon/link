@@ -4,7 +4,9 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>Sales</title>
+    <meta name="description"
+        content="enlaces, link para todo tipo de contenido, todos tus enlaces en un solo lugar, link, redes sociales">
+    <title>miLink | Enlaces para redes, videos, menús y mas.</title>
     @include('resources.css')
 </head>
 
@@ -19,120 +21,14 @@
                             <i class="ti-menu"></i>
                         </div>
                         <div class="serach_field-area d-flex align-items-center">
-                            <div class="search_inner">
-                                <form action="#">
-                                    <div class="search_field">
-                                        <input type="text" placeholder="Search here...">
-                                    </div>
-                                    <button type="submit"> <img src="img/icon/icon_search.svg" alt=""> </button>
-                                </form>
-                            </div>
-                            <span class="f_s_14 f_w_400 ml_25 white_text text_white">Apps</span>
                         </div>
                         <div class="header_right d-flex justify-content-between align-items-center">
-                            <div class="header_notification_warp d-flex align-items-center">
-                                <li>
-                                    <a class="bell_notification_clicker nav-link-notify" href="#"> <img
-                                            src="img/icon/bell.svg" alt="">
-                                    </a>
-
-                                    <div class="Menu_NOtification_Wrap">
-                                        <div class="notification_Header">
-                                            <h4>Notifications</h4>
-                                        </div>
-                                        <div class="Notification_body">
-
-                                            <div class="single_notify d-flex align-items-center">
-                                                <div class="notify_thumb">
-                                                    <a href="#"><img src="img/staf/2.png" alt=""></a>
-                                                </div>
-                                                <div class="notify_content">
-                                                    <a href="#">
-                                                        <h5>Cool Marketing </h5>
-                                                    </a>
-                                                    <p>Lorem ipsum dolor sit amet</p>
-                                                </div>
-                                            </div>
-
-                                            <div class="single_notify d-flex align-items-center">
-                                                <div class="notify_thumb">
-                                                    <a href="#"><img src="img/staf/4.png" alt=""></a>
-                                                </div>
-                                                <div class="notify_content">
-                                                    <a href="#">
-                                                        <h5>Awesome packages</h5>
-                                                    </a>
-                                                    <p>Lorem ipsum dolor sit amet</p>
-                                                </div>
-                                            </div>
-
-                                            <div class="single_notify d-flex align-items-center">
-                                                <div class="notify_thumb">
-                                                    <a href="#"><img src="img/staf/3.png" alt=""></a>
-                                                </div>
-                                                <div class="notify_content">
-                                                    <a href="#">
-                                                        <h5>what a packages</h5>
-                                                    </a>
-                                                    <p>Lorem ipsum dolor sit amet</p>
-                                                </div>
-                                            </div>
-
-                                            <div class="single_notify d-flex align-items-center">
-                                                <div class="notify_thumb">
-                                                    <a href="#"><img src="img/staf/2.png" alt=""></a>
-                                                </div>
-                                                <div class="notify_content">
-                                                    <a href="#">
-                                                        <h5>Cool Marketing </h5>
-                                                    </a>
-                                                    <p>Lorem ipsum dolor sit amet</p>
-                                                </div>
-                                            </div>
-
-                                            <div class="single_notify d-flex align-items-center">
-                                                <div class="notify_thumb">
-                                                    <a href="#"><img src="img/staf/4.png" alt=""></a>
-                                                </div>
-                                                <div class="notify_content">
-                                                    <a href="#">
-                                                        <h5>Awesome packages</h5>
-                                                    </a>
-                                                    <p>Lorem ipsum dolor sit amet</p>
-                                                </div>
-                                            </div>
-
-                                            <div class="single_notify d-flex align-items-center">
-                                                <div class="notify_thumb">
-                                                    <a href="#"><img src="img/staf/3.png" alt=""></a>
-                                                </div>
-                                                <div class="notify_content">
-                                                    <a href="#">
-                                                        <h5>what a packages</h5>
-                                                    </a>
-                                                    <p>Lorem ipsum dolor sit amet</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="nofity_footer">
-                                            <div class="submit_button text-center pt_20">
-                                                <a href="#" class="btn_1">See More</a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </li>
-                                <li>
-                                    <a class="CHATBOX_open nav-link-notify" href="#"> <img src="img/icon/msg.svg"
-                                            alt=""> </a>
-                                </li>
-                            </div>
                             <div class="profile_info">
                                 <img src="img/client_img.png" alt="#">
                                 <div class="profile_info_iner">
                                     <div class="profile_author_name">
-                                        <p>Neurologist </p>
-                                        <h5>Dr. Robar Smith</h5>
+                                        <p>{{ Auth::user()->ocupation }} </p>
+                                        <h6>{{ Auth::user()->name }}</h6>
                                     </div>
                                     <div class="profile_info_details">
                                         <a href="#">My Profile </a>
@@ -149,214 +45,86 @@
 
         <div class="main_content_iner overly_inner">
             <div class="container-fluid p-0 ">
-
                 <div class="row">
                     <div class="col-12">
                         <div class="page_title_box d-flex align-items-center justify-content-between">
                             <div class="page_title_left">
-                                <h3 class="f_s_30 f_w_700 text_white">Dashboard</h3>
-                                <ol class="breadcrumb page_bradcam mb-0">
-                                    <li class="breadcrumb-item"><a href="javascript:void(0);">Salessa </a></li>
-                                    <li class="breadcrumb-item"><a href="javascript:void(0);">Dashboard</a></li>
-                                    <li class="breadcrumb-item active">Sales</li>
-                                </ol>
+                                <h3 class="f_s_30 f_w_300 text_white">BIENVENIDO {{ Auth::user()->name }}</h3>
                             </div>
-                            <a href="#" class="white_btn3">Create Report</a>
                         </div>
                     </div>
                 </div>
                 <div class="row ">
-                    <div class="col-lg-8 card_height_100">
+                    <div class="col-lg-9 card_height_100">
                         <div class="white_card mb_20">
                             <div class="white_card_header">
                                 <div class="box_header m-0">
                                     <div class="main-title">
-                                        <h3 class="m-0">Revenue</h3>
+                                        <h3 class="m-0">Mis enlaces</h3>
                                     </div>
-                                    <div class="float-lg-right float-none sales_renew_btns justify-content-end">
-                                        <ul class="nav">
-                                            <li class="nav-item">
-                                                <a class="nav-link active" href="#">This Week</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="#">Last Week</a>
-                                            </li>
-                                            <li class="nav-item"><a class="nav-link" href="#">Last Month</a>
-                                            </li>
-                                        </ul>
+                                    <div class="create_report_btn">
+                                        <a href="#" class="btn btn-primary mb-3"> + </a>
                                     </div>
                                 </div>
+                                <table class="table ">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Nombre</th>
+                                            <th scope="col">Enlace</th>
+                                            <th scope="col">Fecha alta</th>
+                                            <th scope="col">Estatus</th>
+                                            <th scope="col" class="text-center">Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">Tiktok</th>
+                                            <td><a href="https://www.tiktok.com/@milink.fun" target="_blank" class="question_content">https://www.tiktok.com/@milink.fun</a></td>
+                                            <td>07/09/2022</td>
+                                            <td><a href="#" class="status_btn">Active</a></td>
+                                            <td class="text-center">
+                                                <a href="#"><i class="ti-arrow-circle-right" style=""></i></a>
+                                                <a href="#"><i class="ti-pencil" style="margin: 0 .5em"></i></a>
+                                                <a href="#"><i class="ti-close"></i></a>
+                                                <a href="#"><i class="ti-vector" style="margin: 0 .5em"></i></a>
+                                            </td>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+
                             </div>
-                            <div class="white_card_body" style="height: 286px;">
-                                <canvas id="bar"></canvas>
+                            <div class="white_card_body" style="height: auto;">
+
                             </div>
                         </div>
                         <div class="white_card mb_20">
                             <div
                                 class="white_card_body renew_report_card d-flex align-items-center justify-content-between flex-wrap">
                                 <div class="renew_report_left">
-                                    <h4 class="f_s_19 f_w_600 color_theme2 mb-0">Download your earnings report</h4>
-                                    <p class="color_gray2 f_s_12 f_w_600">There are many variations of passages.</p>
+                                    <h4 class="f_s_19 f_w_600 color_theme2 mb-0">Descarga tu reporte quincenal</h4>
                                 </div>
                                 <div class="create_report_btn">
-                                    <a href="#" class="btn_1 mt-1 mb-1">Create Report</a>
+                                    <a href="#" class="btn btn-outline-primary mb-3">Generar Reporte</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 card_height_100 mb_20">
-                        <div class="white_card">
-                            <div class="white_card_header">
-                                <div class="box_header m-0">
-                                    <div class="main-title">
-                                        <h3 class="m-0">Total Sales Unit</h3>
-                                    </div>
-                                    <div class="header_more_tool">
-                                        <div class="dropdown">
-                                            <span class="dropdown-toggle" id="dropdownMenuButton"
-                                                data-bs-toggle="dropdown">
-                                                <i class="ti-more-alt"></i>
-                                            </span>
-                                            <div class="dropdown-menu dropdown-menu-right"
-                                                aria-labelledby="dropdownMenuButton">
-                                                <a class="dropdown-item" href="#"> <i class="ti-eye"></i> Action</a>
-                                                <a class="dropdown-item" href="#"> <i class="ti-trash"></i> Delete</a>
-                                                <a class="dropdown-item" href="#"> <i class="fas fa-edit"></i> Edit</a>
-                                                <a class="dropdown-item" href="#"> <i class="ti-printer"></i> Print</a>
-                                                <a class="dropdown-item" href="#"> <i class="fa fa-download"></i>
-                                                    Download</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="white_card_body p-0">
-                                <div class="card_container">
-                                    <div id="platform_type_dates_donut" style="height:280px"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="sales_unit_footer d-flex justify-content-between">
-                            <div class="single_sales">
-                                <p>This Month Revenue</p>
-                                <h3>$57k</h3>
-                                <p class="d-flex align-items-center"> <i class="ti-arrow-up"></i> <span> 14.5%</span> Up
-                                    From Last Month </p>
-                            </div>
-                            <div class="single_sales disable_sales">
-                                <p>This Month Revenue</p>
-                                <h3>$14k</h3>
-                                <p class="d-flex align-items-center"> <i class="ti-arrow-up"></i> <span> 14.5%</span> Up
-                                    From Last Month </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
+                    <div class="col-lg-3">
                         <div class="white_card card_height_100 mb_20">
                             <div class="white_card_header">
                                 <div class="box_header m-0">
                                     <div class="main-title">
-                                        <h3 class="m-0">Daily Sales</h3>
+                                        <h3 class="m-0">Mis redes sociales</h3>
                                     </div>
-                                    <div class="header_more_tool">
-                                        <div class="dropdown">
-                                            <span class="dropdown-toggle" id="dropdownMenuButton"
-                                                data-bs-toggle="dropdown">
-                                                <i class="ti-more-alt"></i>
-                                            </span>
-                                            <div class="dropdown-menu dropdown-menu-right"
-                                                aria-labelledby="dropdownMenuButton">
-                                                <a class="dropdown-item" href="#"> <i class="ti-eye"></i> Action</a>
-                                                <a class="dropdown-item" href="#"> <i class="ti-trash"></i> Delete</a>
-                                                <a class="dropdown-item" href="#"> <i class="fas fa-edit"></i> Edit</a>
-                                                <a class="dropdown-item" href="#"> <i class="ti-printer"></i> Print</a>
-                                                <a class="dropdown-item" href="#"> <i class="fa fa-download"></i>
-                                                    Download</a>
-                                            </div>
-                                        </div>
+                                    <div class="create_report_btn">
+                                        <a href="#" class="btn btn-primary mb-3"> + </a>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="white_card_body">
-                                <div id="chart-currently"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="white_card card_height_100 mb_20">
-                            <div class="white_card_header">
-                                <div class="box_header m-0">
-                                    <div class="main-title">
-                                        <h3 class="m-0">Summary</h3>
-                                    </div>
-                                    <div class="header_more_tool">
-                                        <div class="dropdown">
-                                            <span class="dropdown-toggle" id="dropdownMenuButton"
-                                                data-bs-toggle="dropdown">
-                                                <i class="ti-more-alt"></i>
-                                            </span>
-                                            <div class="dropdown-menu dropdown-menu-right"
-                                                aria-labelledby="dropdownMenuButton">
-                                                <a class="dropdown-item" href="#"> <i class="ti-eye"></i> Action</a>
-                                                <a class="dropdown-item" href="#"> <i class="ti-trash"></i> Delete</a>
-                                                <a class="dropdown-item" href="#"> <i class="fas fa-edit"></i> Edit</a>
-                                                <a class="dropdown-item" href="#"> <i class="ti-printer"></i> Print</a>
-                                                <a class="dropdown-item" href="#"> <i class="fa fa-download"></i>
-                                                    Download</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="white_card_body mt_30">
-                                <div id="bar1" class="barfiller">
-                                    <div class="tipWrap">
-                                        <span class="tip"></span>
-                                    </div>
-                                    <span class="fill" data-percentage="25"></span>
-                                </div>
-                                <div id="bar2" class="barfiller">
-                                    <div class="tipWrap">
-                                        <span class="tip"></span>
-                                    </div>
-                                    <span class="fill" data-percentage="75"></span>
-                                </div>
-                                <div id="bar3" class="barfiller mb-0">
-                                    <div class="tipWrap">
-                                        <span class="tip"></span>
-                                    </div>
-                                    <span class="fill" data-percentage="34"></span>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="white_card card_height_100 mb_20">
-                            <div class="white_card_header">
-                                <div class="box_header m-0">
-                                    <div class="main-title">
-                                        <h3 class="m-0">Total order</h3>
-                                    </div>
-                                    <div class="float-lg-right float-none sales_renew_btns justify-content-end">
-                                        <ul class="nav">
-                                            <li class="nav-item">
-                                                <a class="nav-link active" href="#">Today</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="#">This week</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="white_card_body d-flex align-items-center" style="height:140px">
-                                <h4 class="f_w_900 f_s_60 mb-0 me-2">356</h4>
-                                <div class="w-100" style="height:100px">
-                                    <canvas width="100%" id="page_views"></canvas>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                     <div class="col-lg-4">
                         <div class="white_card card_height_100  mb_20">
                             <div class="white_card_header">
@@ -567,463 +335,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="white_card card_height_100 mb_20">
-                            <div class="date_picker_wrapper">
-                                <div class="default-datepicker">
-                                    <div class="datepicker-here" data-language='en'></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-8">
-                        <div class="white_card card_height_100  mb_20">
-                            <div class="white_card_header">
-                                <div class="box_header m-0">
-                                    <div class="main-title">
-                                        <h3 class="m-0">Top Global Sales</h3>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="white_card_body pb-0">
-                                <div id="world-map-markers" class="dashboard_w_map"></div>
-                                <div class="row justify-content-center mt_30">
-                                    <div class="col-lg-9">
-                                        <div class="row">
-                                            <div class="col-lg-6">
-                                                <div class="single_progressbar">
-                                                    <h6 class="f_s_14 f_w_400">USA</h6>
-                                                    <div id="bar4" class="barfiller">
-                                                        <div class="tipWrap">
-                                                            <span class="tip"></span>
-                                                        </div>
-                                                        <span class="fill" data-percentage="81"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="single_progressbar">
-                                                    <h6>Australia</h6>
-                                                    <div id="bar5" class="barfiller">
-                                                        <div class="tipWrap">
-                                                            <span class="tip"></span>
-                                                        </div>
-                                                        <span class="fill" data-percentage="58"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="single_progressbar">
-                                                    <h6>Brazil</h6>
-                                                    <div id="bar6" class="barfiller">
-                                                        <div class="tipWrap">
-                                                            <span class="tip"></span>
-                                                        </div>
-                                                        <span class="fill" data-percentage="42"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="single_progressbar">
-                                                    <h6>Latvia</h6>
-                                                    <div id="bar7" class="barfiller">
-                                                        <div class="tipWrap">
-                                                            <span class="tip"></span>
-                                                        </div>
-                                                        <span class="fill" data-percentage="55"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="white_card card_height_100 mb_30 ">
-                            <div class="white_card_header">
-                                <div class="box_header m-0">
-                                    <div class="main-title">
-                                        <h3 class="m-0">Monthly Invoices</h3>
-                                    </div>
-                                    <div class="header_more_tool">
-                                        <div class="dropdown">
-                                            <span class="dropdown-toggle" id="dropdownMenuButton"
-                                                data-bs-toggle="dropdown">
-                                                <i class="ti-more-alt"></i>
-                                            </span>
-                                            <div class="dropdown-menu dropdown-menu-right"
-                                                aria-labelledby="dropdownMenuButton">
-                                                <a class="dropdown-item" href="#"> <i class="ti-eye"></i> Action</a>
-                                                <a class="dropdown-item" href="#"> <i class="ti-trash"></i> Delete</a>
-                                                <a class="dropdown-item" href="#"> <i class="fas fa-edit"></i> Edit</a>
-                                                <a class="dropdown-item" href="#"> <i class="ti-printer"></i> Print</a>
-                                                <a class="dropdown-item" href="#"> <i class="fa fa-download"></i>
-                                                    Download</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="white_card_body QA_section">
-                                <div class="QA_table ">
 
-                                    <table class="table lms_table_active2 p-0">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">Customer</th>
-                                                <th scope="col">Product</th>
-                                                <th scope="col">Invoice</th>
-                                                <th scope="col">Price</th>
-                                                <th scope="col">Status</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    <div class="customer d-flex align-items-center">
-                                                        <div class="thumb_34 mr_15 mt-0"><img
-                                                                class="img-fluid radius_50" src="img/customers/1.png"
-                                                                alt=""></div>
-                                                        <span class="f_s_14 f_w_400 color_text_1">Customer</span>
-                                                    </div>
-                                                </td>
-                                                <td class="f_s_14 f_w_400 color_text_2">Sunglass</td>
-                                                <td class="f_s_14 f_w_400 color_text_3">#DE2548</td>
-                                                <td class="f_s_14 f_w_400 color_text_4">$350</td>
-                                                <td class="f_s_14 f_w_400 text-end"><a href="#"
-                                                        class="badge_btn_1">Pending</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="customer d-flex align-items-center">
-                                                        <div class="thumb_34 mr_15 mt-0"><img
-                                                                class="img-fluid radius_50" src="img/customers/2.png"
-                                                                alt=""></div>
-                                                        <span class="f_s_14 f_w_400 color_text_1">Customer</span>
-                                                    </div>
-                                                </td>
-                                                <td class="f_s_14 f_w_400 color_text_2">Sunglass</td>
-                                                <td class="f_s_14 f_w_400 color_text_3">#DE2548</td>
-                                                <td class="f_s_14 f_w_400 color_text_4">$350</td>
-                                                <td class="f_s_14 f_w_400 text-end"><a href="#"
-                                                        class="badge_btn_2">Paid</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="customer d-flex align-items-center">
-                                                        <div class="thumb_34 mr_15 mt-0"><img
-                                                                class="img-fluid radius_50" src="img/customers/3.png"
-                                                                alt=""></div>
-                                                        <span class="f_s_14 f_w_400 color_text_1">Customer</span>
-                                                    </div>
-                                                </td>
-                                                <td class="f_s_14 f_w_400 color_text_2">Sunglass</td>
-                                                <td class="f_s_14 f_w_400 color_text_3">#DE2548</td>
-                                                <td class="f_s_14 f_w_400 color_text_4">$350</td>
-                                                <td class="f_s_14 f_w_400 text-end"><a href="#"
-                                                        class="badge_btn_3">Shipped</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="customer d-flex align-items-center">
-                                                        <div class="thumb_34 mr_15 mt-0"><img
-                                                                class="img-fluid radius_50" src="img/customers/4.png"
-                                                                alt=""></div>
-                                                        <span class="f_s_14 f_w_400 color_text_1">Customer</span>
-                                                    </div>
-                                                </td>
-                                                <td class="f_s_14 f_w_400 color_text_2">Sunglass</td>
-                                                <td class="f_s_14 f_w_400 color_text_3">#DE2548</td>
-                                                <td class="f_s_14 f_w_400 color_text_4">$350</td>
-                                                <td class="f_s_14 f_w_400 text-end"><a href="#"
-                                                        class="badge_btn_3">Shipped</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="customer d-flex align-items-center">
-                                                        <div class="thumb_34 mr_15 mt-0"><img
-                                                                class="img-fluid radius_50" src="img/customers/5.png"
-                                                                alt=""></div>
-                                                        <span class="f_s_14 f_w_400 color_text_1">Customer</span>
-                                                    </div>
-                                                </td>
-                                                <td class="f_s_14 f_w_400 color_text_2">Sunglass</td>
-                                                <td class="f_s_14 f_w_400 color_text_3">#DE2548</td>
-                                                <td class="f_s_14 f_w_400 color_text_4">$350</td>
-                                                <td class="f_s_14 f_w_400 text-end"><a href="#"
-                                                        class="badge_btn_2">Paid</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="customer d-flex align-items-center">
-                                                        <div class="thumb_34 mr_15 mt-0"><img
-                                                                class="img-fluid radius_50" src="img/customers/6.png"
-                                                                alt=""></div>
-                                                        <span class="f_s_14 f_w_400 color_text_1">Customer</span>
-                                                    </div>
-                                                </td>
-                                                <td class="f_s_14 f_w_400 color_text_2">Sunglass</td>
-                                                <td class="f_s_14 f_w_400 color_text_3">#DE2548</td>
-                                                <td class="f_s_14 f_w_400 color_text_4">$350</td>
-                                                <td class="f_s_14 f_w_400 text-end"><a href="#"
-                                                        class="badge_btn_4 ">Delivered</a></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="white_card card_height_100 mb_20 ">
-                            <div class="white_card_header">
-                                <div class="box_header m-0">
-                                    <div class="main-title">
-                                        <h3 class="m-0">Top Selling Product</h3>
-                                    </div>
-                                    <div class="header_more_tool">
-                                        <div class="dropdown">
-                                            <span class="dropdown-toggle" id="dropdownMenuButton"
-                                                data-bs-toggle="dropdown">
-                                                <i class="ti-more-alt"></i>
-                                            </span>
-                                            <div class="dropdown-menu dropdown-menu-right"
-                                                aria-labelledby="dropdownMenuButton">
-                                                <a class="dropdown-item" href="#"> <i class="ti-eye"></i> Action</a>
-                                                <a class="dropdown-item" href="#"> <i class="ti-trash"></i> Delete</a>
-                                                <a class="dropdown-item" href="#"> <i class="fas fa-edit"></i> Edit</a>
-                                                <a class="dropdown-item" href="#"> <i class="ti-printer"></i> Print</a>
-                                                <a class="dropdown-item" href="#"> <i class="fa fa-download"></i>
-                                                    Download</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="white_card_body QA_section">
-                                <div class="QA_table ">
 
-                                    <table class="table lms_table_active2 p-0">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">Product 1</th>
-                                                <th scope="col">Price</th>
-                                                <th scope="col">Discount</th>
-                                                <th scope="col">Sold</th>
-                                                <th scope="col">Source</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    <div class="customer d-flex align-items-center">
-                                                        <div class="thumb_34 mr_15 mt-0"><img
-                                                                class="img-fluid radius_50"
-                                                                src="img/customers/pro_1.png" alt=""></div>
-                                                        <span class="f_s_14 f_w_400 color_text_1">Product 1</span>
-                                                    </div>
-                                                </td>
-                                                <td class="f_s_14 f_w_400 color_text_2">$564</td>
-                                                <td class="f_s_14 f_w_400 color_text_3">#DE2548</td>
-                                                <td class="f_s_14 f_w_400 color_text_4">60</td>
-                                                <td class="f_s_14 f_w_400 text-end"><a href="#"
-                                                        class="text_color_1">Google</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="customer d-flex align-items-center">
-                                                        <div class="thumb_34 mr_15 mt-0"><img
-                                                                class="img-fluid radius_50"
-                                                                src="img/customers/pro_2.png" alt=""></div>
-                                                        <span class="f_s_14 f_w_400 color_text_1">Product 1</span>
-                                                    </div>
-                                                </td>
-                                                <td class="f_s_14 f_w_400 color_text_2">$564</td>
-                                                <td class="f_s_14 f_w_400 color_text_3">#DE2548</td>
-                                                <td class="f_s_14 f_w_400 color_text_4">60</td>
-                                                <td class="f_s_14 f_w_400 text-end"><a href="#"
-                                                        class="text_color_2">Direct</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="customer d-flex align-items-center">
-                                                        <div class="thumb_34 mr_15 mt-0"><img
-                                                                class="img-fluid radius_50"
-                                                                src="img/customers/pro_3.png" alt=""></div>
-                                                        <span class="f_s_14 f_w_400 color_text_1">Product 1</span>
-                                                    </div>
-                                                </td>
-                                                <td class="f_s_14 f_w_400 color_text_2">$564</td>
-                                                <td class="f_s_14 f_w_400 color_text_3">#DE2548</td>
-                                                <td class="f_s_14 f_w_400 color_text_4">60</td>
-                                                <td class="f_s_14 f_w_400 text-end"><a href="#"
-                                                        class="text_color_1">Email</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="customer d-flex align-items-center">
-                                                        <div class="thumb_34 mr_15 mt-0"><img
-                                                                class="img-fluid radius_50"
-                                                                src="img/customers/pro_4.png" alt=""></div>
-                                                        <span class="f_s_14 f_w_400 color_text_1">Product 1</span>
-                                                    </div>
-                                                </td>
-                                                <td class="f_s_14 f_w_400 color_text_2">$564</td>
-                                                <td class="f_s_14 f_w_400 color_text_3">#DE2548</td>
-                                                <td class="f_s_14 f_w_400 color_text_4">60</td>
-                                                <td class="f_s_14 f_w_400 text-end"><a href="#"
-                                                        class="text_color_3">Refferal</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="customer d-flex align-items-center">
-                                                        <div class="thumb_34 mr_15 mt-0"><img
-                                                                class="img-fluid radius_50"
-                                                                src="img/customers/pro_5.png" alt=""></div>
-                                                        <span class="f_s_14 f_w_400 color_text_1">Product 1</span>
-                                                    </div>
-                                                </td>
-                                                <td class="f_s_14 f_w_400 color_text_2">$564</td>
-                                                <td class="f_s_14 f_w_400 color_text_3">#DE2548</td>
-                                                <td class="f_s_14 f_w_400 color_text_4">60</td>
-                                                <td class="f_s_14 f_w_400 text-end"><a href="#"
-                                                        class="text_color_2">Direct</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="customer d-flex align-items-center">
-                                                        <div class="thumb_34 mr_15 mt-0"><img
-                                                                class="img-fluid radius_50"
-                                                                src="img/customers/pro_6.png" alt=""></div>
-                                                        <span class="f_s_14 f_w_400 color_text_1">Product 1</span>
-                                                    </div>
-                                                </td>
-                                                <td class="f_s_14 f_w_400 color_text_2">$564</td>
-                                                <td class="f_s_14 f_w_400 color_text_3">#DE2548</td>
-                                                <td class="f_s_14 f_w_400 color_text_4">60</td>
-                                                <td class="f_s_14 f_w_400 text-end"><a href="#"
-                                                        class="text_color_3">Refferal</a></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-8">
-                        <div class="white_card card_height_100 mb_20 ">
-                            <div class="white_card_header">
-                                <div class="box_header m-0">
-                                    <div class="main-title">
-                                        <h3 class="m-0">Popular Products</h3>
-                                    </div>
-                                    <div class="header_more_tool">
-                                        <div class="dropdown">
-                                            <span class="dropdown-toggle" id="dropdownMenuButton"
-                                                data-bs-toggle="dropdown">
-                                                <i class="ti-more-alt"></i>
-                                            </span>
-                                            <div class="dropdown-menu dropdown-menu-right"
-                                                aria-labelledby="dropdownMenuButton">
-                                                <a class="dropdown-item" href="#"> <i class="ti-eye"></i> Action</a>
-                                                <a class="dropdown-item" href="#"> <i class="ti-trash"></i> Delete</a>
-                                                <a class="dropdown-item" href="#"> <i class="fas fa-edit"></i> Edit</a>
-                                                <a class="dropdown-item" href="#"> <i class="ti-printer"></i> Print</a>
-                                                <a class="dropdown-item" href="#"> <i class="fa fa-download"></i>
-                                                    Download</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="white_card_body QA_section">
-                                <div class="QA_table ">
 
-                                    <table class="table lms_table_active2 p-0">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">Product</th>
-                                                <th scope="col">Product Code</th>
-                                                <th scope="col">Price</th>
-                                                <th scope="col">Status</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    <div class="customer d-flex align-items-center">
-                                                        <div class="thumb_62 mr_15 mt-0"><img
-                                                                class="img-fluid radius_50"
-                                                                src="img/customers/pro_big.png" alt=""></div>
-                                                        <span class="f_s_20 f_w_400 color_text_3">Unique Watch</span>
-                                                    </div>
-                                                </td>
-                                                <td class="f_s_14 f_w_400 color_text_4">#DE2548</td>
-                                                <td class="f_s_14 f_w_400 color_text_3">$99.00</td>
-                                                <td class="f_s_14 f_w_400 text-end"><a href="#" class="badge_btn_1">354
-                                                        sold</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="customer d-flex align-items-center">
-                                                        <div class="thumb_62 mr_15 mt-0"><img
-                                                                class="img-fluid radius_50"
-                                                                src="img/customers/pro_big_1.png" alt=""></div>
-                                                        <span class="f_s_20 f_w_400 color_text_3">Wireless
-                                                            Headphone</span>
-                                                    </div>
-                                                </td>
-                                                <td class="f_s_14 f_w_400 color_text_4">#DE2548</td>
-                                                <td class="f_s_14 f_w_400 color_text_3">$99.00</td>
-                                                <td class="f_s_14 f_w_400 text-end"><a href="#" class="badge_btn_1">354
-                                                        sold</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="customer d-flex align-items-center">
-                                                        <div class="thumb_62 mr_15 mt-0"><img
-                                                                class="img-fluid radius_50"
-                                                                src="img/customers/pro_big_2.png" alt=""></div>
-                                                        <span class="f_s_20 f_w_400 color_text_3">Sport Shoe</span>
-                                                    </div>
-                                                </td>
-                                                <td class="f_s_14 f_w_400 color_text_4">#DE2548</td>
-                                                <td class="f_s_14 f_w_400 color_text_3">$99.00</td>
-                                                <td class="f_s_14 f_w_400 text-end"><a href="#" class="badge_btn_1">354
-                                                        sold</a></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                    <a href="#" class="badge_btn_semi mt_30 ml_15">View All</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="white_card card_height_100 mb_20 ">
-                            <div class="white_card_header">
-                                <div class="box_header m-0">
-                                    <div class="main-title">
-                                        <h3 class="m-0">Market valus</h3>
-                                    </div>
-                                    <div class="single_wrap_input">
-                                        <select class="nice_Select2 wide" name="" id="">
-                                            <option value="1">year</option>
-                                            <option value="1">month</option>
-                                            <option value="1">day</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="white_card_body QA_section">
-                                <div class="radar-chart">
-                                    <div id="marketchart"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -1163,64 +478,7 @@
         </a>
     </div>
 
-    <script src="js/jquery1-3.4.1.min.js"></script>
-
-    <script src="js/popper1.min.js"></script>
-
-    <script src="js/bootstrap.min.html"></script>
-
-    <script src="js/metisMenu.js"></script>
-
-    <script src="vendors/count_up/jquery.waypoints.min.js"></script>
-
-    <script src="vendors/chartlist/Chart.min.js"></script>
-
-    <script src="vendors/count_up/jquery.counterup.min.js"></script>
-
-    <script src="vendors/niceselect/js/jquery.nice-select.min.js"></script>
-
-    <script src="vendors/owl_carousel/js/owl.carousel.min.js"></script>
-
-    <script src="vendors/datatable/js/jquery.dataTables.min.js"></script>
-    <script src="vendors/datatable/js/dataTables.responsive.min.js"></script>
-    <script src="vendors/datatable/js/dataTables.buttons.min.js"></script>
-    <script src="vendors/datatable/js/buttons.flash.min.js"></script>
-    <script src="vendors/datatable/js/jszip.min.js"></script>
-    <script src="vendors/datatable/js/pdfmake.min.js"></script>
-    <script src="vendors/datatable/js/vfs_fonts.js"></script>
-    <script src="vendors/datatable/js/buttons.html5.min.js"></script>
-    <script src="vendors/datatable/js/buttons.print.min.js"></script>
-
-    <script src="vendors/datepicker/datepicker.js"></script>
-    <script src="vendors/datepicker/datepicker.en.js"></script>
-    <script src="vendors/datepicker/datepicker.custom.js"></script>
-    <script src="js/chart.min.js"></script>
-    <script src="vendors/chartjs/roundedBar.min.js"></script>
-
-    <script src="vendors/progressbar/jquery.barfiller.js"></script>
-
-    <script src="vendors/tagsinput/tagsinput.js"></script>
-
-    <script src="vendors/text_editor/summernote-bs4.js"></script>
-    <script src="vendors/am_chart/amcharts.js"></script>
-
-    <script src="vendors/scroll/perfect-scrollbar.min.js"></script>
-    <script src="vendors/scroll/scrollable-custom.js"></script>
-
-    <script src="vendors/vectormap-home/vectormap-2.0.2.min.js"></script>
-    <script src="vendors/vectormap-home/vectormap-world-mill-en.js"></script>
-
-    <script src="vendors/apex_chart/apex-chart2.js"></script>
-    <script src="vendors/apex_chart/apex_dashboard.js"></script>
-    <script src="vendors/echart/echarts.min.js"></script>
-    <script src="vendors/chart_am/core.js"></script>
-    <script src="vendors/chart_am/charts.js"></script>
-    <script src="vendors/chart_am/animated.js"></script>
-    <script src="vendors/chart_am/kelly.js"></script>
-    <script src="vendors/chart_am/chart-custom.js"></script>
-
-    <script src="js/dashboard_init.js"></script>
-    <script src="js/custom.js"></script>
+    @include('resources.js')
 </body>
 
 <!-- Mirrored from demo.dashboardpack.com/sales-html/index_3.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Sep 2022 20:14:50 GMT -->
