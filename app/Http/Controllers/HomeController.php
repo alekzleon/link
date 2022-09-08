@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Link;
+use App\Models\SocialNetwork;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -23,6 +26,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $links = Link::where('user_id','=',Auth::user()->id)->get();
+        $networksocial = SocialNetwork::where('user_id','=',Auth::user()->id)->get();
+        return view('home')->with('links',$links)->with('networksocial',$networksocial);
     }
 }
