@@ -11,7 +11,8 @@
             
                 <div class="header_right d-flex justify-content-between align-items-center">
                     <div class="profile_info">
-                        <img src="img/client_img.png" alt="#">
+                        <img src="{{ asset('img/'.Auth::user()->email.'/'.Auth::user()->avatar) }}" alt="#">
+                        
                         <div class="profile_info_iner">
                             <div class="profile_author_name">
                                 <p>{{ Auth::user()->ocupation }} </p>
@@ -20,7 +21,11 @@
                             <div class="profile_info_details">
                                 <a href="#">My Profile </a>
                                 <a href="#">Settings</a>
-                                <a href="#">Log Out </a>
+                                <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">Log Out </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
                             </div>
                         </div>
                     </div>

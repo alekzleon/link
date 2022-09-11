@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UrlController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +22,13 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::prefix('admin')->group(function () {
+    Route::post('uploadImage', [AdminController::class, 'uploadImage'])->name('uploadImage');
+    Route::post('changeColor', [AdminController::class, 'changeColor'])->name('changeColor');
+    Route::post('changeAvatar', [AdminController::class, 'changeAvatar'])->name('changeAvatar');
+});
+
+Route::prefix('url')->group(function () {
+    Route::get('getUrl', [UrlController::class, 'url'])->name('getUrl');
+});

@@ -43,8 +43,6 @@
                         </table>
                     </div>
                 </div>
-                <div class="white_card_body" style="height: auto;">
-                </div>
             </div>
         </div>
         <div class="col-lg-6 card_height_100">
@@ -84,11 +82,77 @@
                         </table>
                     </div>
                 </div>
-                <div class="white_card_body" style="height: auto;">
-                </div>
             </div>
         </div>
 
+        
+
+        <div class="col-lg-6 card_height_100">
+            <div class="white_card mb_20">
+                <div class="white_card_header">
+                    <div class="box_header">
+                        <div class="main-title text-center">
+                            <p class="fs-5 text-center fw-bolder">Configura tu perfil.
+                            <p>
+                        </div>
+                        <br>
+                    </div>
+                    <div class="container" style="margin: 0 0 15px 0">
+                        <div class="create_report_btn">
+                            <h6>Sube tu imagen</h6>
+                            <!--<a href="#" class="btn btn-primary mb-3"> + </a>-->
+                        </div>
+                        <div class="">
+                            <form action="{{ route('uploadImage') }}" method="post" enctype="multipart/form-data">
+                                @csrf
+                                <div class="input-group">
+                                    <input type="file" class="form-control" id="image"
+                                        aria-describedby="inputGroupFileAddon04" aria-label="Upload" name="image" required>
+                                    <button class="btn btn-outline-secondary" type="submit"
+                                        id="inputGroupFileAddon04">Subir</button>
+                                </div>
+                                <code class="highlighter-rouge">Tamaño recomendado (1970 x 5980 px.)</code>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="container" style="margin: 0 0 15px 0">
+                        <div class="create_report_btn">
+                            <h6>Selecciona tu color</h6>
+                            <!--<a href="#" class="btn btn-primary mb-3"> + </a>-->
+                        </div>
+                        <div class="">
+                            <form action="{{ route('changeColor') }}" method="post">
+                                @csrf
+                                <div class="input-group">
+                                    <input type="color" class="form-control form-control-color" id="exampleColorInput"
+                                        value="{{ Auth::user()->color }}" name="color" required>
+                                    <button class="btn btn-outline-secondary" type="submit"
+                                        id="inputGroupFileAddon04">Cambiar color</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="container" style="margin: 0 0 15px 0">
+                        <div class="create_report_btn">
+                            <h6>Cambia tu avatar</h6>
+                            <!--<a href="#" class="btn btn-primary mb-3"> + </a>-->
+                        </div>
+                        <div class="">
+                            <form action="{{ route('changeAvatar') }}" method="post" enctype="multipart/form-data">
+                                @csrf
+                                <div class="input-group">
+                                    <input type="file" class="form-control" id="image"
+                                        aria-describedby="inputGroupFileAddon04" aria-label="Upload" name="image" required>
+                                    <button class="btn btn-outline-secondary" type="submit"
+                                        id="inputGroupFileAddon04">Subir</button>
+                                </div>
+                                <code class="highlighter-rouge">Tamaño recomendado (500 x 500 px.)</code>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="col-lg-6">
             <div class="white_box mb_30">
                 <div class="box_header ">
@@ -97,61 +161,67 @@
                     </div>
                 </div>
                 <div class="pCard_card">
-                    <div class="pCard_up">
+                    <div class="pCard_up"
+                        style="background-image:url(../img/{{ Auth::user()->email }}/{{ Auth::user()->img_profile }})">
                         <div class="pCard_text">
-                            <h2>Van Goggles</h2>
-                            <p>UI/UX Designer &amp; UI Developer</p>
+                            <h2>{{ Auth::user()->name }}</h2>
+                            <p>{{ Auth::user()->ocupation }}</p>
                         </div>
                         <div class="pCard_add"><i class="fa fa-plus"></i></div>
                     </div>
                     <div class="pCard_down">
-                        <div class="container" style="margin-top: .7em">                            
+                        <div class="container" style="margin-top: .7em">
                             <div class="row">
-                              <div class="col">
-                                1 of 3
-                              </div>
-                              <div class="col">
-                                2 of 3
-                              </div>
-                              <div class="col">
-                                3 of 3
-                              </div>
-                              <div class="col">
-                                3 of 3
-                              </div>
-                              <div class="col">
-                                3 of 3
-                              </div>
+                                <div class="col">
+                                    <img src="{{ asset('img/icons_social/instagram.svg') }}"
+                                        style="width: 50px;height=auto">
+                                </div>
+                                <div class="col">
+                                    <img src="{{ asset('img/icons_social/facebook.svg') }}"
+                                        style="width: 50px;height=auto">
+                                </div>
+                                <div class="col">
+                                    <img src="{{ asset('img/icons_social/tiktok.svg') }}"
+                                        style="width: 50px;height=auto">
+                                </div>
+                                <div class="col">
+                                    <img src="{{ asset('img/icons_social/youtube.svg') }}"
+                                        style="width: 50px;height=auto">
+                                </div>
+                                <div class="col">
+                                    <img src="{{ asset('img/icons_social/twitter.svg') }}"
+                                        style="width: 50px;height=auto">
+                                </div>
                             </div>
-                          </div>
-                        
+                        </div>
+
                     </div>
                     <div class="pCard_back">
-                        <p>Personaliza tus colores, imagen y hasta 5 enlaces y redes</p>                  
+                        <p>Personaliza tus colores, imagen y hasta 5 enlaces y redes</p>
                         <div class="white_card_body" style="margin-block: 1.8em">
                             <div class="d-grid gap-2" style="padding: 0 2.5em">
                                 @foreach ($links as $link)
-                                    <button type="button" class="btn btn-block" style="background-color:#2EED21">                                    
-                                        <div class="position-absolute start-10">                                        
-                                            <span class="badge bg-dark">
-                                                <div class="icon_menu">
-                                                    <img src="img/menu-icon/11.svg" alt="">
-                                                </div>
-                                            </span>
-                                        </div>
-                                        TIKTOK
-                                    </button>
-                                @endforeach                                
+                                <a href="{{ $link->url }}" target="_blank" type="button" class="btn btn-block"
+                                    style="background-color:{{ Auth::user()->color }}">
+                                    <div class="position-absolute start-10">
+                                        <span class="badge bg-dark">
+                                            <div class="icon_menu">
+                                                <img src="img/menu-icon/11.svg" alt="">
+                                            </div>
+                                        </span>
+                                    </div>
+                                    {{ strtoupper($link->name) }}
+                                </a>
+                                @endforeach
                             </div>
                         </div>
                         <div class="logo d-flex position-absolute start-50 translate-middle-x">
-                            <img src="img/logo_black.png" alt="" style="width: 160px; height: auto;">                            
+                            <img src="img/logo_black.png" alt="" style="width: 160px; height: auto;">
                         </div>
                     </div>
-                    
                 </div>
             </div>
-        </div>        
+        </div>
     </div>
 </div>
 @endsection

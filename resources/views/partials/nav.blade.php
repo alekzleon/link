@@ -15,7 +15,7 @@
             </a>
         </li>
         <li class="">
-            <a href="/home" aria-expanded="false">
+            <a href="{{ route('getUrl') }}" aria-expanded="false">
                 <div class="icon_menu">
                     <img src="img/menu-icon/14.svg" alt="">
                 </div>

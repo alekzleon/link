@@ -18,3 +18,4 @@
 <link rel="stylesheet" href="{{ asset('css/metisMenu.css') }}">
 <link rel="stylesheet" href="{{ asset('css/style1.css') }}" />
 <link rel="stylesheet" href="{{ asset('css/colors/default.css') }}" id="colorSkinCSS">
+<link rel="stylesheet" href="{{ asset('icons/icons_social.css') }}"
