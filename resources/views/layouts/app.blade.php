@@ -32,6 +32,8 @@
             @yield('content')
         </div>
 
+        <!-- MODALES -->
+        @yield('modal')
         <div class="footer_part">
             <div class="container-fluid">
                 <div class="row">
@@ -45,10 +47,6 @@
             </div>
         </div>
     </section>
-
-
-    
-
     <div id="back-top" style="display: none;">
         <a title="Go to Top" href="#">
             <i class="ti-angle-up"></i>
@@ -56,6 +54,7 @@
     </div>
 
     @include('resources.js')
+    @yield('js-dev')
 </body>
 
 <!-- Mirrored from demo.dashboardpack.com/sales-html/index_3.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Sep 2022 20:14:50 GMT -->

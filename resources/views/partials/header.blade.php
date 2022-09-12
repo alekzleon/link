@@ -2,7 +2,7 @@
     <div class="col-12">
         <div class="page_title_box d-flex align-items-center justify-content-between">
             <div class="page_title_left">
-                <h3 class="f_s_30 f_w_300 text_white">BIENVENIDO {{ Auth::user()->name }}</h3>
+                <h3 class="f_s_30 f_w_300 text_white">HOLA {{ strtoupper(Auth::user()->name) }}</h3>
             </div>
             <div class=" d-flex justify-content-between align-items-center">
                 <div class="sidebar_icon d-lg-none">
@@ -11,7 +11,11 @@
             
                 <div class="header_right d-flex justify-content-between align-items-center">
                     <div class="profile_info">
+                        @if(Auth::user()->avatar==='profile.png')
+                        <img src="{{ asset('img/'.Auth::user()->avatar) }}" alt="#">
+                        @else
                         <img src="{{ asset('img/'.Auth::user()->email.'/'.Auth::user()->avatar) }}" alt="#">
+                        @endif
                         
                         <div class="profile_info_iner">
                             <div class="profile_author_name">

@@ -26,7 +26,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $links = Link::where('user_id','=',Auth::user()->id)->get();
+        $links = Link::where('user_id','=',Auth::user()->id)
+                ->orderby('clicks','desc')->limit('5')
+                ->get();
         $networksocial = SocialNetwork::where('user_id','=',Auth::user()->id)->get();
         return view('home')->with('links',$links)->with('networksocial',$networksocial);
     }

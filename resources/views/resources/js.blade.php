@@ -1,6 +1,6 @@
 <script src="{{ asset('js/jquery1-3.4.1.min.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="{{ asset('js/popper1.min.js') }}"></script>
-<script src="{{ asset('js/bootstrap.min.html') }}"></script>
 <script src="{{ asset('js/metisMenu.js') }}"></script>
 <script src="{{ asset('vendors/count_up/jquery.waypoints.min.js') }}"></script>
 <script src="{{ asset('vendors/chartlist/Chart.min.js') }}"></script>

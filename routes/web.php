@@ -31,4 +31,7 @@ Route::prefix('admin')->group(function () {
 
 Route::prefix('url')->group(function () {
     Route::get('getUrl', [UrlController::class, 'url'])->name('getUrl');
+    Route::post('setUrl', [UrlController::class, 'setUrl'])->name('setUrl');
+    Route::get('deleteUrl/{id}', [UrlController::class, 'deleteUrl'])->name('deleteUrl');
+    Route::get('downloadqr/{url}', [UrlController::class, 'downloadqr'])->name('downloadqr');
 });

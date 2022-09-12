@@ -100,7 +100,6 @@
                     <div class="container" style="margin: 0 0 15px 0">
                         <div class="create_report_btn">
                             <h6>Sube tu imagen</h6>
-                            <!--<a href="#" class="btn btn-primary mb-3"> + </a>-->
                         </div>
                         <div class="">
                             <form action="{{ route('uploadImage') }}" method="post" enctype="multipart/form-data">
@@ -135,7 +134,6 @@
                     <div class="container" style="margin: 0 0 15px 0">
                         <div class="create_report_btn">
                             <h6>Cambia tu avatar</h6>
-                            <!--<a href="#" class="btn btn-primary mb-3"> + </a>-->
                         </div>
                         <div class="">
                             <form action="{{ route('changeAvatar') }}" method="post" enctype="multipart/form-data">
@@ -150,6 +148,22 @@
                             </form>
                         </div>
                     </div>
+
+                    <div class="container" style="margin: 0 0 15px 0">
+                        <div class="create_report_btn">
+                            <h6>Comparte tu codigo QR</h6>
+                            <!--<a href="#" class="btn btn-primary mb-3"> + </a>-->
+                        </div>
+                        <div class="">
+                            @if (Auth::user()->avatar=='profile.png')
+                            <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->merge(public_path().'/img/'.Auth::user()->avatar, .1, true)->size(500)->generate('https://milink.fun/'.Auth::user()->url)) !!} ">
+                            @else
+                            <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->merge(public_path().'/img/'.Auth::user()->email.'/'.Auth::user()->avatar, .1, true)->size(500)->generate('https://milink.fun/'.Auth::user()->url)) !!} ">
+                            @endif
+                            <p><code>Comparte tu qr con todos tus contactos</a></code></p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -162,7 +176,12 @@
                 </div>
                 <div class="pCard_card">
                     <div class="pCard_up"
-                        style="background-image:url(../img/{{ Auth::user()->email }}/{{ Auth::user()->img_profile }})">
+                        @if(Auth::user()->img_profile==='profile.png')
+                        style="background-image:url(../img/{{ Auth::user()->img_profile }})"
+                        @else
+                        style="background-image:url(../img/{{ Auth::user()->email }}/{{ Auth::user()->img_profile }})"
+                        @endif
+                        >
                         <div class="pCard_text">
                             <h2>{{ Auth::user()->name }}</h2>
                             <p>{{ Auth::user()->ocupation }}</p>
@@ -173,23 +192,23 @@
                         <div class="container" style="margin-top: .7em">
                             <div class="row">
                                 <div class="col">
-                                    <img src="{{ asset('img/icons_social/instagram.svg') }}"
+                                    <img src="{{ asset('img/icons_social/instagram.png') }}"
                                         style="width: 50px;height=auto">
                                 </div>
                                 <div class="col">
-                                    <img src="{{ asset('img/icons_social/facebook.svg') }}"
+                                    <img src="{{ asset('img/icons_social/facebook.png') }}"
                                         style="width: 50px;height=auto">
                                 </div>
                                 <div class="col">
-                                    <img src="{{ asset('img/icons_social/tiktok.svg') }}"
+                                    <img src="{{ asset('img/icons_social/tik-tok.png') }}"
                                         style="width: 50px;height=auto">
                                 </div>
                                 <div class="col">
-                                    <img src="{{ asset('img/icons_social/youtube.svg') }}"
+                                    <img src="{{ asset('img/icons_social/youtube.png') }}"
                                         style="width: 50px;height=auto">
                                 </div>
                                 <div class="col">
-                                    <img src="{{ asset('img/icons_social/twitter.svg') }}"
+                                    <img src="{{ asset('img/icons_social/twitter.png') }}"
                                         style="width: 50px;height=auto">
                                 </div>
                             </div>
@@ -224,4 +243,5 @@
         </div>
     </div>
 </div>
+
 @endsection
